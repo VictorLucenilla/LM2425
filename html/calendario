@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario 1º</title>
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+        }
+        
+        td, th {
+          text-align: center;
+          padding: 5px;
+        }
 
+        td.iso {
+            background-color: yellow;
+            color: black;
+            border: 1px solid black;
+        }
+        td.ipe{
+            background-color: red;
+            color: white;
+            border: 1px solid black; 
+        }
+        td.funh{
+            background-color: green;
+            color: lightblue;
+            border: 1px solid black; 
+        }
+        td.recreo{
+            background-color: orange;
+            color: black;
+            border: 1px solid black; 
+        }
+        td.ral{
+            background-color: lightblue;
+            color: red;
+            border: 1px solid black; 
+        }
+        td.bd{
+            background-color: lightgreen;
+            color: black;
+            border: 1px solid black; 
+        }
+        td.lenm{
+            background-color: gray;
+            color: white;
+            border: 1px solid black; 
+        }
+        td.dig{
+            background-color: wheat;
+            color: black;
+            border: 1px solid black;
+        }td.sost{
+            background-color: magenta;
+            color: white;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Horario 1º CFGS</h1>
+    <table>
+        <colgroup>
+            <col span="1" style="background-color: #dddddd;">
+            <col span="5" style="border: 1px solid black;">
+        </colgroup>
+        <tr>
+            <th style="background-color: white;"></th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miércoles</th>
+            <th>Jueves</th>
+            <th>Viernes</th>
+        </tr>
+        <tr>
+            <td>8:00-9:00</td>
+            <td class="funh">FunH</td>
+            <td class="bd">BD</td>
+            <td class="iso">ISO</td>
+            <td class="iso">ISO</td>
+            <td class="iso">ISO</td>
+        </tr>
+        <tr>
+            <td>9:00-10:00</td>
+            <td class="iso">ISO</td>
+            <td class="bd">BD</td>
+            <td class="iso">ISO</td>
+            <td class="iso">ISO</td>
+            <td class="iso">ISO</td>
+        </tr>
+        <tr>
+            <td>10:00-11:00</td>
+            <td class="dig">Dig</td>
+            <td class="ipe">IPE</td>
+            <td class="bd">BD</td>
+            <td class="funh">FunH</td>
+            <td class="bd">BD</td>
+        </tr>
+        <tr>
+            <td>11:00-11:30</td>
+            <td colspan="5" class="recreo">Recreo</td>
+        </tr>
+        <tr>
+            <td>11:30-12:30</td>
+            <td class="bd">BD</td>
+            <td class="ipe">IPE</td>
+            <td class="bd">BD</td>
+            <td class="funh">FunH</td>
+            <td class="ral">RAL</td>
+        </tr>
+        <tr>
+            <td>12:30-13:30</td>
+            <td class="ral">RAL</td>
+            <td class="lenm">LenM</td>
+            <td class="ipe">IPE</td>
+            <td class="ral">RAL</td>
+            <td class="ral">RAL</td>
+        </tr>
+        <tr>
+            <td>13:30-14:30</td>
+            <td class="ral">RAL</td>
+            <td class="lenm">LenM</td>
+            <td class="lenm">LenM</td>
+            <td class="ral">RAL</td>
+            <td class="sost">Sost</td>
+        </tr>
+</body>
+</html>
