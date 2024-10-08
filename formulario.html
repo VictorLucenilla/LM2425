@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <form>
+        <!-- Selección de idioma -->
+        <fieldset>
+            <legend>Rellenar</legend>
+            <label><input type="radio" name="idioma" value="ingles"> Inglés</label><br>
+            <label><input type="radio" name="idioma" value="aleman"> Alemán</label><br>
+            <label><input type="radio" name="idioma" value="frances"> Francés</label><br>
+        </fieldset>
+
+        <!-- Selección de universidad -->
+        <label for="universidad">Seleccione universidad:</label>
+        <select id="universidad" name="universidad">
+            <option value="usb">USB</option>
+        </select><br><br>
+
+        <!-- Campos de texto para nombre y apellidos -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre"><br><br>
+
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos"><br><br>
+
+        <!-- Preferencias de género -->
+        <fieldset>
+            <legend>Indique sus preferencias por favor</legend>
+            <label><input type="checkbox" name="preferencia" value="hombre"> Hombre</label><br>
+            <label><input type="checkbox" name="preferencia" value="mujer"> Mujer</label>
+        </fieldset><br>
+
+        <!-- Selección de género -->
+        <label><input type="checkbox" name="genero" value="mujer"> Mujer</label><br>
+        <label><input type="checkbox" name="genero" value="hombre"> Hombre</label><br><br>
+
+        <!-- Selección de fecha -->
+        <label for="fecha">Elija una fecha:</label>
+        <input type="text" id="fecha" name="fecha" placeholder="dd/mm/aaaa"><br><br>
+    </form>
+</body>
+</html>
