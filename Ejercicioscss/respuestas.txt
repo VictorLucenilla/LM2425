@@ -55,4 +55,15 @@ CSS externo:
     ---No la entiendo---
 
 
-7. 
+7. ¿Por qué los selectores combinados son útiles?
+    Los selectores combinados son útiles porque permiten aplicar estilos a elementos específicos basándose en su relación con otros elementos,
+    evitando que se apliquen estilos de manera indiscriminada. Facilitan la organización del CSS al agrupar estilos relacionados y evitar la creación de múltiples clases o IDs innecesarios.
+    Proporcionan un control más granular sobre cómo se aplican los estilos, dependiendo de la jerarquía y la estructura del documento HTML. Además,
+    ayudan a prevenir conflictos de estilos al ser más específicos, lo que reduce el riesgo de que estilos no deseados afecten a otros elementos.
+
+
+8. ¿Cómo afecta la estructura HTML a los selectores que puedes usar? 
+    La estructura HTML afecta a los selectores que puedes usar porque la jerarquía del documento determina cómo están anidados los elementos. Por ejemplo, un selector como `div p` selecciona solo los párrafos dentro de un `<div>`, mientras que `div > p` se aplica solo a los hijos directos.
+    Las relaciones entre elementos, como padres, hijos y hermanos, también influyen en los selectores.
+    Por ejemplo, `p + span` selecciona un `<span>` que sigue a un `<p>`. Además, la presencia de clases e IDs en el HTML impacta qué selectores puedes utilizar.
+    
