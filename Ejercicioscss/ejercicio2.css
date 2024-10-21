@@ -1,0 +1,20 @@
+/* Selector de tipo para centrar el encabezado h2 */
+h2 {
+    text-align: center;
+}
+
+/* Selector de clase para los párrafos con la clase "parrafo" */
+.parrafo {
+    color: blue;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Selector de ID para el párrafo con id "especial" */
+#especial {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: lightgray;
+    padding: 10px;
+}

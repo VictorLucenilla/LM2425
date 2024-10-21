@@ -21,8 +21,20 @@ CSS externo:
 
 
 2. ¿Qué ventajas ves en usar CSS externo frente a los otros métodos?
-
     Mantenimiento más fácil: Los cambios de estilo se hacen en un solo archivo y se reflejan en todas las páginas, lo que ahorra tiempo y reduce errores.
     Reutilización de estilos: Un archivo CSS externo puede ser utilizado por múltiples páginas, lo que mejora la consistencia del diseño en todo el sitio web.
     Separación de contenido y estilo: Mantiene el HTML más limpio y fácil de leer al separar el contenido del diseño.
     Carga más eficiente: Los navegadores pueden almacenar en caché el archivo CSS externo, lo que mejora la velocidad de carga de las páginas.
+
+
+3. ¿Por qué usarías una clase en lugar de un ID?
+    Reutilización de estilos: Una clase (class) se puede aplicar a múltiples elementos en una página, lo que permite reutilizar el mismo estilo para varios elementos. Es ideal cuando varios elementos necesitan el mismo diseño.
+    Flexibilidad: Una clase puede ser utilizada en cualquier número de elementos, mientras que un ID (id) debe ser único dentro de la página, aplicándose solo a un elemento.
+    Mantenimiento de código: Usar clases facilita la gestión de estilos cuando se necesita aplicar cambios a varios elementos. Al modificar la definición de la clase en el CSS, todos los elementos que la usen se actualizarán automáticamente.
+
+4. Si cambias el estilo de <h2> en el CSS, ¿cómo afecta eso a otros encabezados <h2> en la página?
+    Aplicación  del estilo: Si cambias el estilo de <h2> en el archivo CSS, todos los encabezados <h2> de la página se verán afectados. Esto se debe a que el selector de tipo (h2) aplica los estilos a todos los elementos <h2> del documento HTML.
+    Diseño: Al modificar el estilo de <h2>, se logra una apariencia uniforme en todos los encabezados <h2>, lo cual es útil para mantener la coherencia visual en la página.
+    Posibles  no deseados: Si hay algunos encabezados <h2> que requieren un estilo diferente, se necesitarán clases o IDs específicos para aplicar estilos únicos a esos elementos sin afectar a los demás.
+
+
