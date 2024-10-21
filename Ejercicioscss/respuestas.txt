@@ -32,9 +32,27 @@ CSS externo:
     Flexibilidad: Una clase puede ser utilizada en cualquier número de elementos, mientras que un ID (id) debe ser único dentro de la página, aplicándose solo a un elemento.
     Mantenimiento de código: Usar clases facilita la gestión de estilos cuando se necesita aplicar cambios a varios elementos. Al modificar la definición de la clase en el CSS, todos los elementos que la usen se actualizarán automáticamente.
 
+
 4. Si cambias el estilo de <h2> en el CSS, ¿cómo afecta eso a otros encabezados <h2> en la página?
     Aplicación  del estilo: Si cambias el estilo de <h2> en el archivo CSS, todos los encabezados <h2> de la página se verán afectados. Esto se debe a que el selector de tipo (h2) aplica los estilos a todos los elementos <h2> del documento HTML.
     Diseño: Al modificar el estilo de <h2>, se logra una apariencia uniforme en todos los encabezados <h2>, lo cual es útil para mantener la coherencia visual en la página.
     Posibles  no deseados: Si hay algunos encabezados <h2> que requieren un estilo diferente, se necesitarán clases o IDs específicos para aplicar estilos únicos a esos elementos sin afectar a los demás.
 
 
+5. Diferencias entre alinear texto usando CSS y HTML:
+    Alineación con HTML:
+    En versiones anteriores de HTML, se podía usar el atributo align para alinear texto, como <p align="center">.
+    Este método es obsoleto y no se recomienda en HTML moderno, ya que no sigue las mejores prácticas de separación entre estructura (HTML) y estilo (CSS).
+    El uso del atributo align limita la capacidad de mantener el código limpio y estructurado, ya que mezcla la presentación con el contenido.
+
+
+    Alineación con CSS:
+    CSS proporciona la propiedad text-align para alinear el texto de forma más flexible. Se puede usar en el archivo CSS o en línea, con valores como left, center, right, o justify.
+    Usar CSS permite mantener una mejor separación entre el diseño y la estructura del documento, lo que facilita el mantenimiento y la actualización de los estilos.
+    Es más versátil, ya que se pueden combinar múltiples propiedades para lograr un diseño más sofisticado (por ejemplo, alineación junto con márgenes, padding, o estilos de fuente)
+
+6. Cambios en los márgenes o el padding para mejorar el diseño de los párrafos:
+    ---No la entiendo---
+
+
+7. 
