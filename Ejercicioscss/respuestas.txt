@@ -1,0 +1,28 @@
+Preguntas para reflexionar 
+
+1. ¿Qué diferencias encontraste entre los tres métodos de aplicar CSS?
+ CSS en línea:
+    Se aplica directamente al elemento HTML usando el atributo style.
+    Es útil para cambios rápidos o para aplicar un estilo único a un elemento específico.
+    Hace que el código sea más difícil de mantener, ya que los estilos están mezclados con el contenido HTML.
+    No es reutilizable, ya que el estilo solo se aplica al elemento donde se define.
+
+CSS interno:
+    Se coloca en la sección <style> dentro del archivo HTML.
+    Es útil cuando se quiere aplicar estilos a una sola página o cuando se tienen pocos estilos.
+    Facilita la aplicación de estilos a múltiples elementos en la misma página.
+    No es la mejor opción para proyectos grandes o con múltiples páginas, ya que se requiere repetir los estilos en cada página.
+
+CSS externo:
+    Se escribe en un archivo separado con extensión .css y se vincula al archivo HTML.
+    Es ideal para proyectos grandes o sitios con múltiples páginas, ya que los estilos pueden ser reutilizados fácilmente.
+    Facilita el mantenimiento del código, ya que los cambios en el archivo CSS se reflejan en todas las páginas que lo usan.
+    Mejora la organización al separar la estructura del contenido (HTML) del diseño (CSS).
+
+
+2. ¿Qué ventajas ves en usar CSS externo frente a los otros métodos?
+
+    Mantenimiento más fácil: Los cambios de estilo se hacen en un solo archivo y se reflejan en todas las páginas, lo que ahorra tiempo y reduce errores.
+    Reutilización de estilos: Un archivo CSS externo puede ser utilizado por múltiples páginas, lo que mejora la consistencia del diseño en todo el sitio web.
+    Separación de contenido y estilo: Mantiene el HTML más limpio y fácil de leer al separar el contenido del diseño.
+    Carga más eficiente: Los navegadores pueden almacenar en caché el archivo CSS externo, lo que mejora la velocidad de carga de las páginas.
