@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4d2c2;
+    margin: 0;
+    padding: 0;
+}
+
+.principal {
+    padding: 20px;
+    margin-right: 200px; 
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.menu {
+    position: fixed;
+    right: 0;
+    top: 20px;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    padding-right: 20px;
+}
+
+.menu button {
+    background-color: #6c7a89;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+.menu button:hover {
+    background-color: #4a5d68;
+}
+
+@media (max-width: 1023px) {
+    .principal{
+        display: none; 
+    }
+}
+
+    .menu {
+        position: static; 
+        width: 100%; 
+        max-width: 800px; 
+        margin: 0 auto; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .menu button {
+        width: 80%; 
+        font-size: 2em; 
+        padding: 30px; 
+        margin: 15px 0; 
+}
+
+
+@media (min-width: 1024px) {
+    .principal {
+        display: block;
+        margin-right: 200px; 
+    }
+
+    .menu {
+        position: fixed;
+        right: 0;
+        top: 20px;
+        width: 180px;
+        flex-direction: column;
+    }
+
+    .menu button {
+        width: auto;
+        font-size: 1em;
+        padding: 10px;
+        margin: 5px 0;
+    }
+}
+
+/* Estilos para impresión */
+@media print {
+    body {
+        font-family: serif;
+        font-size: 12pt;
+    }
+
+    .menu {
+        display: none;
+    }
+}
