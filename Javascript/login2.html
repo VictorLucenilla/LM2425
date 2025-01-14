@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Usuario</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .contenedor {
+      text-align: center;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    input {
+      margin: 5px 0;
+      padding: 8px;
+      width: 200px;
+    }
+    #mensaje {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Login</h1>
+    <form id="formulario">
+      <input type="text" id="usuario" placeholder="Usuario" required><br>
+      <input type="password" id="contraseña" placeholder="Contraseña" required><br>
+      <button type="submit">Enviar</button>
+    </form>
+    <div id="mensaje"></div>
+  </div>
+
+  <script>
+    /* Añado un "escuchador de eventos" para que mi documento
+    esté pendiente del click del botón */
+    document.getElementById('formulario').addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      /* Si no escribimos la línea anterior el form borrará los campos al "enviar" los datos y recargará la página...
+      te invito a que pruebes con la línea anterior y sin la línea anterior para que
+      veas lo que ocurre */
+      let usuario = document.getElementById('usuario').value;
+      let pass = document.getElementById('contraseña').value;
+      let mensaje = `Bienvenido usuario ${usuario} con la contraseña ${pass}`;
+      document.getElementById('mensaje').textContent = mensaje;
+    });
+  </script>
+</body>
+</html>

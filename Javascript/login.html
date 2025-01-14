@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Usuario</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .contenedor {
+      text-align: center;
+    }
+    form {
+      margin-bottom: 20px;
+    }
+    input {
+      margin: 5px 0;
+      padding: 8px;
+      width: 200px;
+    }
+    #mensaje {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <h1>Login</h1>
+    <!-- Prescindo de <form> </form> porque realmente no voy a enviar nada -->
+      <input type="text" id="usuario" placeholder="nombre" required><br>
+      <input type="password" id="contraseña" placeholder="pass" required><br>
+      <button onclick="login()">Enviar</button><!-- Utilizo evento onclick para llamar a la función -->
+    <div id="mensaje"></div>
+  </div>
+
+  <script>
+    function login(){
+      let usuario = document.getElementById('usuario').value;
+      let pass = document.getElementById('contraseña').value;
+      let mensaje = `Bienvenido usuario ${usuario} con la contraseña ${pass}`;
+      document.getElementById('mensaje').textContent = mensaje;
+    }
+  </script>
+
+  
+</body>
+</html>
