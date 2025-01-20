@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript 10</title>
+<meta charset="UTF-8">
+</head>
+<body>
+<p>Prueba de variable global</p>
+<button onclick="suma()">Incrementa</button>
+<button onclick="resta()">Decrementa</button>
+<p id="demo"></p>
+<script>
+var numero=1; // Variable declarada de manera global
+document.getElementById("demo").innerHTML = numero;
+function resta() {
+    numero = numero - 1;
+    document.getElementById("demo").innerHTML = numero;
+}
+function suma() {
+numero = numero + 1;
+document.getElementById("demo").innerHTML = numero;
+}
+</script>
+</body>
+</html>
