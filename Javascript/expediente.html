@@ -15,28 +15,7 @@
         <input type="number" class="grade" step="0.01" placeholder="Calificación del módulo 4">
         <button type="button" onclick="mostrarExpediente()">Calcular</button>
     </form>
-    <p id="resultado"></p>
-
-    <script>
-        function mostrarExpediente() {
-            const calificaciones = Array.from(document.getElementsByClassName('grade')).map(input => parseFloat(input.value));
-            const validas = calificaciones.filter(cal => !isNaN(cal) && cal >= 0);
-            
-            if (validas.length === 0) {
-                document.getElementById('resultado').innerText = "Por favor, introduce al menos una calificación válida.";
-                return;
-            }
-            
-            const aprobados = validas.filter(cal => cal >= 5).length;
-            const suspensos = validas.length - aprobados;
-            const media = validas.reduce((a, b) => a + b, 0) / validas.length;
-
-            document.getElementById('resultado').innerHTML = `
-                <p>Módulos aprobados: ${aprobados}</p>
-                <p>Módulos suspensos: ${suspensos}</p>
-                <p>Media aritmética: ${media.toFixed(2)}</p>
-            `;
-        }
+  
     </script>
 </body>
 </html>
