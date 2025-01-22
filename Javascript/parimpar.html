@@ -15,6 +15,7 @@
     <p id="resultado"></p>
 
     <script>
+
         function verificarParidad() {
             let numero = parseInt(document.getElementById('numero').value);
             if (isNaN(numero)) {
@@ -22,7 +23,8 @@
                 return;
             }
             const resultado = (numero % 2 === 0) ? "par" : "impar";
-            document.getElementById('resultado').innerText = `El número ${numero} es ${resultado}.`;
+            document.getElementById('resultado').innerText = `El número 
+            ${numero} es ${resultado}.`;
         }
     </script>
 </body>
