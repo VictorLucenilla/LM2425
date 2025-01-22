@@ -12,26 +12,28 @@
 <p>he pensado en un numero del 1 al 100</p>
 
 <input type="text" id="entrada" placeholder="introduce un numero" >
-<button onclick="comprobar()">comprobar"</button>
+<button onclick="comprobar()">comprobar</button>
 <p id="resulado"></p>
 
 <script>
 
 var numero=33;
-
+var intentos=0;
+p 
 function comprobar(){
-var entrada=document.getElementById("entrada").value;
-if (entrada==numero)
+var entrada=parseInt(document.getElementById("entrada").value);
+if (entrada==numero){
+    intentos++;}
 {
     document.getElementById("resulado").innerHTML="has acertado";
 }
-else if (entrada<numero)
-{
-    document.getElementById("resulado").innerHTML="el numero es mas mayor";
-}
-else  (entrada>numero)
+ if (entrada>numero)
 {
     document.getElementById("resulado").innerHTML="el numero es menor";
+}
+else  (entrada<numero)
+{
+    document.getElementById("resulado").innerHTML="el numero es mayor";
 }
 }
 
