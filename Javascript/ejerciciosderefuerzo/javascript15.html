@@ -1,45 +1,35 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adivina un numero</title>
+<title>Javascript 15</title>
+<meta charset="UTF-8">
 </head>
 <body>
-  
-    <h1>Adivina un numero </h1>
-
-<p>he pensado en un numero del 1 al 100</p>
-
-<input type="text" id="entrada" placeholder="introduce un numero" >
-<button onclick="comprobar()">comprobar</button>
-<p id="resulado"></p>
-
+<h1>Adivina un número entre 1 y 100:</h1>
+<input id="entrada" type="textbox" placeholder="Escribe número:">
+<button id="boton" onclick="comprueba()">Probar!</button>
+<p id="resultado"></p>
+<p id="contador"></p>
 <script>
+var numero = Math.floor(Math.random()*100+1);
+var intentos = 0; // Inicializamos el contador de intentos
 
-var numero=33;
-var intentos=0;
-p 
-function comprobar(){
-var entrada=parseInt(document.getElementById("entrada").value);
-if (entrada==numero){
-    intentos++;}
-{
-    document.getElementById("resulado").innerHTML="has acertado";
+function comprueba() {
+    intentos++; // Incrementamos el contador de intentos
+    var entrada = document.getElementById("entrada").value;
+    if (entrada > numero) {
+        document.getElementById("resultado").innerHTML = "Lo siento, el número era menor...";
+    } else if (entrada == numero) {
+        document.getElementById("resultado").innerHTML = "¡Acertaste!";
+    } else {
+        document.getElementById("resultado").innerHTML = "Lo sentimos, el número era mayor...";
+    }
+    // Mostramos el número de intentos
+    document.getElementById("contador").innerHTML = "Intentos: " + intentos;
 }
- if (entrada>numero)
-{
-    document.getElementById("resulado").innerHTML="el numero es menor";
-}
-else  (entrada<numero)
-{
-    document.getElementById("resulado").innerHTML="el numero es mayor";
-}
-}
-
-
-
-
+</script>
+</body>
+</html>
 
 
 
