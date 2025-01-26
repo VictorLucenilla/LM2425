@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gestor de arrays</title>
+    <title>Gestor de Arrays</title>
+    <script src="gestor.js" defer></script>
 </head>
 <body>
+    <h2>Gestor de Números</h2>
+    <input type="number" id="numero" placeholder="Añadir número">
+    <button onclick="agregarNumero()">Agregar</button>
+    <button onclick="ordenarNumeros()">Ordenar</button>
+    <button onclick="calcularMedia()">Calcular Media</button>
     
-
-
+    <p><strong>Números:</strong> <span id="listaNumeros"></span></p>
+    <p><strong>Media:</strong> <span id="media"></span></p>
+</body>
+</html>
 
 
 
