@@ -1,0 +1,10 @@
+#lista-tareas {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tarea {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
