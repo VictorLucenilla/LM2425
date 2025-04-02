@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 1: Guardar y Mostrar Nombre de Usuario</title>
+<script>
+window.onload = function() {
+    const nombreGuardado = localStorage.getItem('nombreUsuario');
+    if (nombreGuardado) {
+        document.getElementById('nombreUsuario').textContent = nombreGuardado;
+    }
+};
+
+function guardarNombre() {
+    const nombre = document.getElementById('nombre').value;
+    localStorage.setItem('nombreUsuario', nombre);
+    document.getElementById('nombreUsuario').textContent = nombre;
+}
+</script>
+</head>
+<body>
+
+<label for="nombre">Introduce tu nombre:</label>
+<input type="text" id="nombre">
+<button onclick="guardarNombre()">Guardar Nombre</button>
+
+<p>Nombre guardado: <span id="nombreUsuario"></span></p>
+
+</body>
+</html>

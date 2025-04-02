@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 2: Cambio de Tema</title>
+<script>
+function cambiarTema(tema) {
+    document.body.className = tema;
+    localStorage.setItem('tema', tema);
+}
+
+window.onload = function() {
+    const temaGuardado = localStorage.getItem('tema');
+    if (temaGuardado) {
+        document.body.className = temaGuardado;
+    }
+};
+</script>
+<style>
+.dark {
+    background-color: #333;
+    color: white;
+}
+.light {
+    background-color: #FFF;
+    color: black;
+}
+</style>
+</head>
+<body>
+
+<button onclick="cambiarTema('light')">Tema Claro</button>
+<button onclick="cambiarTema('dark')">Tema Oscuro</button>
+
+</body>
+</html>

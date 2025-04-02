@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 4: Eliminar Tareas</title>
+<script>
+function agregarTarea() {
+    const tarea = document.getElementById('tarea').value;
+    if (tarea) {
+        const lista = document.getElementById('listaTareas');
+        const elemento = document.createElement('li');
+        elemento.textContent = tarea;
+        
+        const botonEliminar = document.createElement('button');
+        botonEliminar.textContent = 'Eliminar';
+        botonEliminar.onclick = function() {
+            lista.removeChild(elemento);
+            guardarTareas();
+        };
+        
+        elemento.appendChild(botonEliminar);
+        lista.appendChild(elemento);
+
+        guardarTareas();
+    }
+}
+
+function guardarTareas() {
+    const tareas = [];
+    document.querySelectorAll('#listaTareas li').forEach(function(item) {
+        tareas.push(item.firstChild.textContent);
+    });
+    localStorage.setItem('tareas', JSON.stringify(tareas));
+}
+
+function cargarTareas() {
+    const tareas = JSON.parse(localStorage.getItem('tareas'));
+    if (tareas) {
+        const lista = document.getElementById('listaTareas');
+        tareas.forEach(function(tarea) {
+            const elemento = document.createElement('li');
+            elemento.textContent = tarea;
+            
+            const botonEliminar = document.createElement('button');
+            botonEliminar.textContent = 'Eliminar';
+            botonEliminar.onclick = function() {
+                lista.removeChild(elemento);
+                guardarTareas();
+            };
+            
+            elemento.appendChild(botonEliminar);
+            lista.appendChild(elemento);
+        });
+    }
+}
+
+window.onload = cargarTareas;
+</script>
+</head>
+<body>
+
+<input type="text" id="tarea">
+<button onclick="agregarTarea()">Agregar Tarea</button>
+
+<ul id="listaTareas"></ul>
+
+</body>
+</html>
