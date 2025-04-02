@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicio 5: Configuración de Usuario Personalizable</title>
+<script>
+function guardarConfiguracion() {
+    const colorFondo = document.getElementById('colorFondo').value;
+    const tamanoFuente = document.getElementById('tamanoFuente').value;
+    
+    const configuracion = { colorFondo, tamanoFuente };
+    localStorage.setItem('configuracion', JSON.stringify(configuracion));
+    
+    aplicarConfiguracion();
+}
+
+function aplicarConfiguracion() {
+    const configuracion = JSON.parse(localStorage.getItem('configuracion'));
+    if (configuracion) {
+        document.body.style.backgroundColor = configuracion.colorFondo;
+        document.body.style.fontSize = configuracion.tamanoFuente + 'px';
+    }
+}
+
+function restablecerConfiguracion() {
+    localStorage.removeItem('configuracion');
+    document.body.style.backgroundColor = '';
+    document.body.style.fontSize = '';
+}
+
+window.onload = aplicarConfiguracion;
+</script>
+</head>
+<body>
+
+<label for="colorFondo">Color de Fondo:</label>
+<input type="color" id="colorFondo">
+
+<label for="tamanoFuente">Tamaño de Fuente:</label>
+<input type="number" id="tamanoFuente" min="10" max="24">
+
+<button onclick="guardarConfiguracion()">Guardar Configuración</button>
+<button onclick="restablecerConfiguracion()">Restablecer a Predeterminado</button>
+
+</body>
+</html>
+
