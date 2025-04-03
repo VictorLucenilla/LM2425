@@ -3,83 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de Deportes</title>
+    <title>Carrito y Pago</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <h1>🏋️ Tienda de Deportes 🏀</h1>
-
-    <!-- Productos -->
+    <h1>Artículos de Entrenamiento</h1>
     <div class="contenedor">
-        <div class="producto" data-nombre="Pesas" data-precio="50">
+        <!-- Tarjetas de Productos -->
+        <div class="tarjeta-producto" id="producto1">
             <img src="pesas.jpg" alt="Pesas">
             <h3>Pesas de 10kg</h3>
-            <p>Precio: $50</p>
-            <button onclick="agregarAlCarrito('Pesas', 50)">Añadir</button>
+            <p>Pesas de alta calidad para entrenamiento.</p>
+            <p class="precio">$50</p>
+            <button onclick="agregarAlCarrito('producto1', 50)">Añadir al Carrito</button>
         </div>
 
-        <div class="producto" data-nombre="Cinta de Correr" data-precio="300">
-            <img src="cinta.jpg" alt="Cinta de Correr">
+        <div class="tarjeta-producto" id="producto2">
+            <img src="cintadecorrer.jpg" alt="Cinta de Correr">
             <h3>Cinta de Correr</h3>
-            <p>Precio: $300</p>
-            <button onclick="agregarAlCarrito('Cinta de Correr', 300)">Añadir</button>
+            <p>Ideal para cardio en casa.</p>
+            <p class="precio">$300</p>
+            <button onclick="agregarAlCarrito('producto2', 300)">Añadir al Carrito</button>
         </div>
 
-        <div class="producto" data-nombre="Bicicleta Estática" data-precio="200">
+        <div class="tarjeta-producto" id="producto3">
             <img src="bici.jpg" alt="Bicicleta Estática">
             <h3>Bicicleta Estática</h3>
-            <p>Precio: $200</p>
-            <button onclick="agregarAlCarrito('Bicicleta Estática', 200)">Añadir</button>
+            <p>Perfecta para entrenamientos de resistencia.</p>
+            <p class="precio">$200</p>
+            <button onclick="agregarAlCarrito('producto3', 200)">Añadir al Carrito</button>
         </div>
 
-        <div class="producto" data-nombre="Banco de Pesas" data-precio="80">
+        <div class="tarjeta-producto" id="producto4">
             <img src="banco.jpg" alt="Banco de Pesas">
             <h3>Banco de Pesas</h3>
-            <p>Precio: $80</p>
-            <button onclick="agregarAlCarrito('Banco de Pesas', 80)">Añadir</button>
+            <p>Banco ajustable para ejercicios de fuerza.</p>
+            <p class="precio">$80</p>
+            <button onclick="agregarAlCarrito('producto4', 80)">Añadir al Carrito</button>
         </div>
 
-        <div class="producto" data-nombre="Mancuernas" data-precio="60">
-            <img src="mancuernas.jpg" alt="Mancuernas">
-            <h3>Mancuernas</h3>
-            <p>Precio: $60</p>
-            <button onclick="agregarAlCarrito('Mancuernas', 60)">Añadir</button>
+        <!-- Producto adicional -->
+        <div class="tarjeta-producto" id="producto5">
+            <img src="camiseta.jpg" alt="Camiseta Deportiva">
+            <h3>Camiseta Deportiva</h3>
+            <p>Camiseta transpirable y cómoda para entrenar.</p>
+            <p class="precio">$20</p>
+            <button onclick="agregarAlCarrito('producto5', 20)">Añadir al Carrito</button>
         </div>
 
-        <div class="producto" data-nombre="Cuerda para Saltar" data-precio="20">
-            <img src="cuerda.jpg" alt="Cuerda para Saltar">
-            <h3>Cuerda para Saltar</h3>
-            <p>Precio: $20</p>
-            <button onclick="agregarAlCarrito('Cuerda para Saltar', 20)">Añadir</button>
+        <!-- Producto adicional -->
+        <div class="tarjeta-producto" id="producto6">
+            <img src="zapatillas.jpg" alt="Zapatillas de Correr">
+            <h3>Zapatillas de Correr</h3>
+            <p>Zapatos ergonómicos para mejorar tu rendimiento.</p>
+            <p class="precio">$90</p>
+            <button onclick="agregarAlCarrito('producto6', 90)">Añadir al Carrito</button>
         </div>
     </div>
 
-    <!-- Carrito -->
+    <!-- Carrito de Compras -->
     <div class="carrito">
-        <h2>🛒 Carrito</h2>
-        <ul id="lista-carrito"></ul>
-        <p><strong>Total: $<span id="total">0</span></strong></p>
-        <button onclick="mostrarFormulario()">Finalizar Compra</button>
+        <h2>Carrito de Compras</h2>
+        <ul id="items-carrito"></ul>
+        <p class="total"><strong>Total: $<span id="precio-total">0</span></strong></p>
+        <button class="boton-pago" onclick="mostrarFormularioPago()">Realizar Compra</button>
     </div>
 
-    <!-- Formulario de Pago (oculto por defecto) -->
-    <div id="formulario-pago" style="display: none;">
-        <h2>Finalizar Pago</h2>
-        <form id="formPago">
-            <input type="text" id="nombre" placeholder="Nombre" required>
-            <input type="text" id="dni" placeholder="DNI" required>
-            <input type="email" id="email" placeholder="Correo Electrónico" required>
-            <input type="text" id="tarjeta" placeholder="Tarjeta de Crédito" required>
+    <!-- Formulario de Pago (oculto inicialmente) -->
+    <div id="contenedor-formulario-pago" style="display: none;">
+        <h2>Finalizar Compra</h2>
+        <form id="formulario-pago">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="tarjeta">Tarjeta de Crédito:</label>
+            <input type="text" id="tarjeta" required>
+
             <button type="submit">Pagar</button>
         </form>
-        <p id="mensaje"></p>
+        <p id="mensaje-confirmacion"></p>
     </div>
 
-    <footer>
-        <p>© 2024 Tienda Deportiva - Hecho por Víctor Lucenila y Pablo Tena</p>
-    </footer>
-
     <script src="script.js"></script>
+    <footer>
+        <p>Realizado por Victor Lucenila y Pablo Tena</p>
+    </footer>
 </body>
 </html>
+
