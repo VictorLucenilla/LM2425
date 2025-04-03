@@ -1,47 +1,74 @@
-// Carrito de compras
 let cart = JSON.parse(localStorage.getItem('cart')) || {};
 
-function updateQuantity(productId, change) {
-    if (!cart[productId]) cart[productId] = 0;
-    cart[productId] += change;
-    if (cart[productId] < 0) cart[productId] = 0;
+function addToCart(productId, price) {
+    const product = document.getElementById(productId);
+    const productName = product.querySelector('h3').textContent;
+
+    if (!cart[productId]) {
+        cart[productId] = { name: productName, quantity: 1, price: price };
+    } else {
+        cart[productId].quantity += 1;
+    }
+
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartDisplay();
 }
 
 function updateCartDisplay() {
     const cartItems = document.getElementById('cart-items');
+    const totalPriceElement = document.getElementById('total-price');
     cartItems.innerHTML = '';
-    let totalItems = 0;
-    for (const [productId, quantity] of Object.entries(cart)) {
-        if (quantity > 0) {
+    let totalPrice = 0;
+
+    for (const [productId, item] of Object.entries(cart)) {
+        if (item.quantity > 0) {
             const li = document.createElement('li');
-            li.textContent = `${productId}: ${quantity}`;
+            li.textContent = `${item.name} (${item.quantity}) - $${item.price * item.quantity}`;
+
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove';
+            removeButton.onclick = function () {
+                removeFromCart(productId);
+            };
+
+            li.appendChild(removeButton);
             cartItems.appendChild(li);
-            totalItems += quantity;
+            totalPrice += item.price * item.quantity;
         }
     }
-    document.getElementById('cart-count').textContent = totalItems;
+
+    totalPriceElement.textContent = totalPrice;
 }
 
-function clearCart() {
-    cart = {};
-    localStorage.removeItem('cart');
-    updateCartDisplay();
+function removeFromCart(productId) {
+    if (cart[productId]) {
+        cart[productId].quantity -= 1;
+        if (cart[productId].quantity <= 0) {
+            delete cart[productId];
+        }
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartDisplay();
+    }
 }
 
-// Validación del formulario
+function showCheckoutForm() {
+    document.getElementById('checkout-form-container').style.display = 'block';
+}
+
 document.getElementById('checkout-form').addEventListener('submit', function (e) {
     e.preventDefault();
+
     const name = document.getElementById('name').value;
     const dni = document.getElementById('dni').value;
     const email = document.getElementById('email').value;
     const card = document.getElementById('card').value;
 
     if (name && dni && email && card) {
-        document.getElementById('confirmation-message').textContent = "Compra realizada con éxito.";
+        document.getElementById('confirmation-message').textContent = "¡Compra realizada con éxito! Gracias por tu compra.";
+        localStorage.removeItem('cart');
+        updateCartDisplay();
     } else {
-        alert("Por favor, complete todos los campos.");
+        alert("Por favor, completa todos los campos.");
     }
 });
 

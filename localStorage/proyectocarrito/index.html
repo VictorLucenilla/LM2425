@@ -3,37 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de Gimnasio</title>
+    <title>Carrito y Pago</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Tienda de Gimnasio</h1>
-        <div id="cart-icon">🛒 <span id="cart-count">0</span></div>
-    </header>
+    <div class="container">
+        <!-- Tarjetas de Productos -->
+        <div class="product-card" id="product1">
+            <img src="pesas.jpg" alt="Pesas">
+            <h3>Pesas de 10kg</h3>
+            <p>Pesas de alta calidad para entrenamiento.</p>
+            <p class="price">$50</p>
+            <button onclick="addToCart('product1', 50)">Añadir al Carrito</button>
+        </div>
 
-    <main>
-        <section class="products">
-            <div class="product-card">
-                <img src="pesas.jpg" alt="Pesas">
-                <h3>Pesas de 10kg</h3>
-                <p>Pesas de alta calidad para entrenamiento.</p>
-                <div class="quantity-controls">
-                    <button onclick="updateQuantity('pesas', -1)">-</button>
-                    <span id="pesas-quantity">0</span>
-                    <button onclick="updateQuantity('pesas', 1)">+</button>
-                </div>
-            </div>
-            <!-- Repetir para otros 3 productos -->
-        </section>
+        <div class="product-card" id="product2">
+            <img src="cintadecorrer.jpg" alt="Cinta de Correr">
+            <h3>Cinta de Correr</h3>
+            <p>Ideal para cardio en casa.</p>
+            <p class="price">$300</p>
+            <button onclick="addToCart('product2', 300)">Añadir al Carrito</button>
+        </div>
 
-        <section class="cart">
-            <h2>Carrito de Compras</h2>
-            <ul id="cart-items"></ul>
-            <button onclick="clearCart()">Vaciar Carrito</button>
-            <a href="checkout.html"><button>Proceder al Pago</button></a>
-        </section>
-    </main>
+        <div class="product-card" id="product3">
+            <img src="bici.jpg" alt="Bicicleta Estática">
+            <h3>Bicicleta Estática</h3>
+            <p>Perfecta para entrenamientos de resistencia.</p>
+            <p class="price">$200</p>
+            <button onclick="addToCart('product3', 200)">Añadir al Carrito</button>
+        </div>
+
+        <div class="product-card" id="product4">
+            <img src="banco.jpg" alt="Banco de Pesas">
+            <h3>Banco de Pesas</h3>
+            <p>Banco ajustable para ejercicios de fuerza.</p>
+            <p class="price">$80</p>
+            <button onclick="addToCart('product4', 80)">Añadir al Carrito</button>
+        </div>
+    </div>
+
+    <!-- Carrito de Compras -->
+    <div class="cart">
+        <h2>Carrito de Compras</h2>
+        <ul id="cart-items"></ul>
+        <p class="total"><strong>Total: $<span id="total-price">0</span></strong></p>
+        <button class="checkout-btn" onclick="showCheckoutForm()">Realizar Compra</button>
+    </div>
+
+    <!-- Formulario de Pago (oculto inicialmente) -->
+    <div id="checkout-form-container" style="display: none;">
+        <h2>Finalizar Compra</h2>
+        <form id="checkout-form">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" required>
+
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="card">Tarjeta de Crédito:</label>
+            <input type="text" id="card" required>
+
+            <button type="submit">Pagar</button>
+        </form>
+        <p id="confirmation-message"></p>
+    </div>
 
     <script src="script.js"></script>
 </body>
