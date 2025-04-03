@@ -165,3 +165,13 @@ h1 {
     font-size: 1em;
     color: #333;
 }
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #010f18;
+    color: #ffffff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
