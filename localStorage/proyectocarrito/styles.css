@@ -7,6 +7,13 @@ body {
     color: #333;
 }
 
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2.5em;
+    color: #000000;
+}
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -23,7 +30,7 @@ body {
     padding: 20px;
     margin: 15px;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.6s ease;
 }
 
 .product-card:hover {
@@ -51,13 +58,13 @@ body {
 
 .product-card .price {
     font-size: 1.2em;
-    color: #b68417;
+    color: #000000;
     font-weight: bold;
     margin: 10px 0;
 }
 
 .product-card button {
-    background-color: #3498db;
+    background-color: #a76631;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -68,7 +75,7 @@ body {
 }
 
 .product-card button:hover {
-    background-color: #2980b9;
+    background-color: #dd9958;
 }
 
 /* Carrito de Compras */
@@ -77,12 +84,12 @@ body {
     padding: 25px;
     margin: 20px;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
 }
 
 .cart h2 {
     font-size: 1.8em;
-    color: #2c3e50;
+    color: #000000;
     margin-bottom: 15px;
 }
 
@@ -100,7 +107,7 @@ body {
 }
 
 #cart-items li button {
-    background-color: #e74c3c;
+    background-color: #a54338;
     color: white;
     border: none;
     padding: 5px 10px;
@@ -134,7 +141,7 @@ body {
 }
 
 .cart .checkout-btn:hover {
-    background-color: #1a1563;
+    background-color: #c2984b;
 }
 
 /* Formulario de Pago */
@@ -148,7 +155,7 @@ body {
 
 #checkout-form-container h2 {
     font-size: 1.8em;
-    color: #2c3e50;
+    color: #000000;
     margin-bottom: 15px;
 }
 
