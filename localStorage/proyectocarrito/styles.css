@@ -1,177 +1,89 @@
-/* Estilos Generales */
+/* Estilos generales */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
-    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 h1 {
-    text-align: center;
-    margin: 20px 0;
-    font-size: 2.5em;
-    color: #000000;
+    background-color: #ff4500;
+    padding: 20px;
+    margin: 0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
+/* Contenedor de productos */
 .contenedor {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
-}
-
-/* Tarjetas de Productos */
-.tarjeta-producto {
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    width: 220px;
-    padding: 20px;
-    margin: 15px;
-    text-align: center;
-    transition: transform 0.4s ease, box-shadow 0.6s ease;
-}
-
-.tarjeta-producto:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-}
-
-.tarjeta-producto img {
-    max-width: 100%;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.tarjeta-producto h3 {
-    font-size: 1.5em;
-    margin: 10px 0;
-    color: #2c3e50;
-}
-
-.tarjeta-producto p {
-    font-size: 0.9em;
-    color: #666;
-    margin: 5px 0;
-}
-
-.tarjeta-producto .precio {
-    font-size: 1.2em;
-    color: #000000;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.tarjeta-producto button {
-    background-color: #a76631;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 6px;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
-}
-
-.tarjeta-producto button:hover {
-    background-color: #dd9958;
-}
-
-/* Carrito de Compras */
-.carrito {
-    background-color: #fff;
-    padding: 25px;
     margin: 20px;
-    border-radius: 12px;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
 }
 
-.carrito h2 {
-    font-size: 1.8em;
-    color: #000000;
-    margin-bottom: 15px;
+/* Tarjetas de productos */
+.producto {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px;
+    width: 200px;
+    box-shadow: 0px 4px 8px rgba(255, 69, 0, 0.5);
+    text-align: center;
 }
 
-#articulos-carrito {
-    list-style: none;
-    padding: 0;
-}
-
-#articulos-carrito li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-#articulos-carrito li button {
-    background-color: #a54338;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 0.9em;
-    transition: background-color 0.3s ease;
-}
-
-#articulos-carrito li button:hover {
-    background-color: #c71b08;
-}
-
-.carrito .total {
-    font-size: 1.3em;
-    color: #463b00;
-    font-weight: bold;
-    margin: 15px 0;
-}
-
-.carrito .boton-pago {
-    background-color: #886313;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    cursor: pointer;
-    border-radius: 6px;
-    font-size: 1.1em;
+.producto img {
     width: 100%;
-    transition: background-color 0.3s ease;
+    border-radius: 10px;
 }
 
-.carrito .boton-pago:hover {
-    background-color: #c2984b;
+.producto button {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.producto button:hover {
+    background-color: #ff6f3f;
+}
+
+/* Carrito */
+.carrito {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+    width: 300px;
+    margin: auto;
+    box-shadow: 0px 4px 8px rgba(255, 69, 0, 0.5);
 }
 
 /* Formulario de Pago */
-#contenedor-formulario-pago {
-    background-color: #fff;
-    padding: 25px;
-    margin: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+#formulario-pago {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 10px;
+    width: 300px;
+    margin: 20px auto;
+    box-shadow: 0px 4px 8px rgba(255, 69, 0, 0.5);
 }
 
-#contenedor-formulario-pago h2 {
-    font-size: 1.8em;
-    color: #000000;
-    margin-bottom: 15px;
-}
-
-#contenedor-formulario-pago label {
-    display: block;
-    margin: 10px 0 5px;
-    font-size: 1em;
-    color: #333;
-}
-
+/* Footer anclado */
 footer {
+    background-color: #ff4500;
+    padding: 10px;
+    margin-top: auto;
     text-align: center;
-    padding: 10px 0;
-    background: #010f18;
-    color: #ffffff;
-    position: relative;
-    bottom: 0;
     width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
 }

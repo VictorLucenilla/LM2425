@@ -3,78 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito y Pago</title>
+    <title>Tienda de Deportes</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Artículos de Entrenamiento</h1>
+
+    <h1>🏋️ Tienda de Deportes 🏀</h1>
+
+    <!-- Productos -->
     <div class="contenedor">
-        <!-- Tarjetas de Productos -->
-        <div class="tarjeta-producto" id="producto1">
+        <div class="producto" data-nombre="Pesas" data-precio="50">
             <img src="pesas.jpg" alt="Pesas">
             <h3>Pesas de 10kg</h3>
-            <p>Pesas de alta calidad para tu entrenamiento.</p>
-            <p class="precio">50€</p>
-            <button onclick="añadirAlCarrito('producto1', 50)">Añadir al Carrito</button>
+            <p>Precio: $50</p>
+            <button onclick="agregarAlCarrito('Pesas', 50)">Añadir</button>
         </div>
 
-        <div class="tarjeta-producto" id="producto2">
-            <img src="cintadecorrer.jpg" alt="Cinta de Correr">
+        <div class="producto" data-nombre="Cinta de Correr" data-precio="300">
+            <img src="cinta.jpg" alt="Cinta de Correr">
             <h3>Cinta de Correr</h3>
-            <p>Ideal para cardio en casa.</p>
-            <p class="precio">300€</p>
-            <button onclick="añadirAlCarrito('producto2', 300)">Añadir al Carrito</button>
+            <p>Precio: $300</p>
+            <button onclick="agregarAlCarrito('Cinta de Correr', 300)">Añadir</button>
         </div>
 
-        <div class="tarjeta-producto" id="producto3">
+        <div class="producto" data-nombre="Bicicleta Estática" data-precio="200">
             <img src="bici.jpg" alt="Bicicleta Estática">
             <h3>Bicicleta Estática</h3>
-            <p>Perfecta para entrenamientos de resistencia.</p>
-            <p class="precio">200€</p>
-            <button onclick="añadirAlCarrito('producto3', 200)">Añadir al Carrito</button>
+            <p>Precio: $200</p>
+            <button onclick="agregarAlCarrito('Bicicleta Estática', 200)">Añadir</button>
         </div>
 
-        <div class="tarjeta-producto" id="producto4">
+        <div class="producto" data-nombre="Banco de Pesas" data-precio="80">
             <img src="banco.jpg" alt="Banco de Pesas">
             <h3>Banco de Pesas</h3>
-            <p>Banco ajustable para ejercicios de fuerza.</p>
-            <p class="precio">80€</p>
-            <button onclick="añadirAlCarrito('producto4', 80)">Añadir al Carrito</button>
+            <p>Precio: $80</p>
+            <button onclick="agregarAlCarrito('Banco de Pesas', 80)">Añadir</button>
+        </div>
+
+        <div class="producto" data-nombre="Mancuernas" data-precio="60">
+            <img src="mancuernas.jpg" alt="Mancuernas">
+            <h3>Mancuernas</h3>
+            <p>Precio: $60</p>
+            <button onclick="agregarAlCarrito('Mancuernas', 60)">Añadir</button>
+        </div>
+
+        <div class="producto" data-nombre="Cuerda para Saltar" data-precio="20">
+            <img src="cuerda.jpg" alt="Cuerda para Saltar">
+            <h3>Cuerda para Saltar</h3>
+            <p>Precio: $20</p>
+            <button onclick="agregarAlCarrito('Cuerda para Saltar', 20)">Añadir</button>
         </div>
     </div>
 
-    <!-- Carrito de Compras -->
+    <!-- Carrito -->
     <div class="carrito">
-        <h2>Carrito de Compras</h2>
-        <ul id="articulos-carrito"></ul>
-        <p class="total"><strong>Total: <span id="precio-total">0</span>€</strong></p>
-        <button class="boton-pago" onclick="mostrarFormularioPago()">Realizar Pedido</button>
+        <h2>🛒 Carrito</h2>
+        <ul id="lista-carrito"></ul>
+        <p><strong>Total: $<span id="total">0</span></strong></p>
+        <button onclick="mostrarFormulario()">Finalizar Compra</button>
     </div>
 
-    <!-- Formulario de Pago (oculto inicialmente) -->
-    <div id="contenedor-formulario-pago" style="display: none;">
-        <h2>Finalizar Pedido</h2>
-        <form id="formulario-pago">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" required>
-
-            <label for="dni">DNI:</label>
-            <input type="text" id="dni" required>
-
-            <label for="email">Correo Electrónico:</label>
-            <input type="email" id="email" required>
-
-            <label for="tarjeta">Número de Tarjeta de Crédito:</label>
-            <input type="text" id="tarjeta" required>
-
+    <!-- Formulario de Pago (oculto por defecto) -->
+    <div id="formulario-pago" style="display: none;">
+        <h2>Finalizar Pago</h2>
+        <form id="formPago">
+            <input type="text" id="nombre" placeholder="Nombre" required>
+            <input type="text" id="dni" placeholder="DNI" required>
+            <input type="email" id="email" placeholder="Correo Electrónico" required>
+            <input type="text" id="tarjeta" placeholder="Tarjeta de Crédito" required>
             <button type="submit">Pagar</button>
         </form>
-        <p id="mensaje-confirmacion"></p>
+        <p id="mensaje"></p>
     </div>
 
-    <script src="script.js"></script>
     <footer>
-        <p>Realizado por Víctor Lucenila y Pablo Tena</p>
+        <p>© 2024 Tienda Deportiva - Hecho por Víctor Lucenila y Pablo Tena</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
