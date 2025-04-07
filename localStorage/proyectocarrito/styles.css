@@ -1,6 +1,6 @@
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     background-color: #000000; /* Fondo negro */
     color: white;
     text-align: center;
@@ -28,7 +28,6 @@ h1 {
 }
 
 /* Tarjetas de productos */
-
 /* Tarjetas de productos */
 .producto {
     background-color: #ffffff; /* Fondo blanco */
@@ -45,7 +44,6 @@ h1 {
 .producto:hover {
     box-shadow: 0px 0px 20px 5px rgba(212, 175, 55, 0.7); /* Sombreado dorado */
 }
-
 
 .producto img {
     width: 100%; /* Ajustar imagen al 100% del ancho */
@@ -119,7 +117,7 @@ h1 {
 #formulario-pago {
     background-color: #ffffff; /* Fondo blanco */
     border-radius: 10px;
-    padding: 30px;
+    padding: 50px;
     margin: 20px auto;
     width: 300px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
@@ -161,5 +159,5 @@ button.eliminar:hover {
 footer {
     text-align: center;
     margin-top: 20px;
-    color: #D4AF37; /* Dorado */
+color:#B8860B
 }
