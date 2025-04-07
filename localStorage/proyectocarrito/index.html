@@ -8,9 +8,7 @@
 </head>
 <body>
 
-    <header>
-        <h1>Tienda de Deportes</h1>
-    </header>
+    <h1>Tienda de Deportes</h1>
 
     <!-- Productos -->
     <div class="contenedor">
@@ -18,42 +16,42 @@
             <img src="pesas.jpg" alt="Pesas">
             <h3>Pesas de 10kg</h3>
             <p>Precio: 50€</p>
-            <button onclick="agregarAlCarrito('Pesas', 50)">Añadir al Carrito</button>
+            <button onclick="agregarAlCarrito('Pesas', 50)">Añadir</button>
         </div>
 
         <div class="producto" data-nombre="Cinta de Correr" data-precio="300">
             <img src="cintadecorrer.jpg" alt="Cinta de Correr">
             <h3>Cinta de Correr</h3>
             <p>Precio: 300€</p>
-            <button onclick="agregarAlCarrito('Cinta de Correr', 300)">Añadir al Carrito</button>
+            <button onclick="agregarAlCarrito('Cinta de Correr', 300)">Añadir</button>
         </div>
 
         <div class="producto" data-nombre="Bicicleta Estática" data-precio="200">
             <img src="bici.jpg" alt="Bicicleta Estática">
             <h3>Bicicleta Estática</h3>
-            <p>Precio: 200€ </p>
-            <button onclick="agregarAlCarrito('Bicicleta Estática', 200)">Añadir al Carrito</button>
+            <p>Precio: 200€</p>
+            <button onclick="agregarAlCarrito('Bicicleta Estática', 200)">Añadir</button>
         </div>
 
         <div class="producto" data-nombre="Banco de Pesas" data-precio="80">
             <img src="banco.jpg" alt="Banco de Pesas">
             <h3>Banco de Pesas</h3>
             <p>Precio: 80€</p>
-            <button onclick="agregarAlCarrito('Banco de Pesas', 80)">Añadir al Carrito</button>
+            <button onclick="agregarAlCarrito('Banco de Pesas', 80)">Añadir</button>
         </div>
 
         <div class="producto" data-nombre="Juego de Discos" data-precio="60">
             <img src="JUEGODEDISCOS.jpg" alt="Juego de Discos">
             <h3>Juego de Discos</h3>
             <p>Precio: 60€</p>
-            <button onclick="agregarAlCarrito('Juego de Discos', 60)">Añadir al Carrito</button>
+            <button onclick="agregarAlCarrito('Juego de Discos', 60)">Añadir</button>
         </div>
 
         <div class="producto" data-nombre="Cuerda para Saltar" data-precio="20">
             <img src="COMBA.jpg" alt="Cuerda para Saltar">
             <h3>Cuerda para Saltar</h3>
             <p>Precio: 20€</p>
-            <button onclick="agregarAlCarrito('Cuerda para Saltar', 20)">Añadir al Carrito</button>
+            <button onclick="agregarAlCarrito('Cuerda para Saltar', 20)">Añadir</button>
         </div>
     </div>
 
@@ -65,18 +63,27 @@
         <button onclick="mostrarFormulario()">Finalizar Compra</button>
     </div>
 
-    <!-- Formulario de Pago (oculto por defecto) -->
-    <div id="formulario-pago" style="display: none;">
-        <h2>Finalizar Pago</h2>
-        <form id="formPago">
-            <input type="text" id="nombre" placeholder="Nombre" required>
-            <input type="text" id="dni" placeholder="DNI" required>
-            <input type="email" id="email" placeholder="Correo Electrónico" required>
-            <input type="text" id="tarjeta" placeholder="Tarjeta de Crédito" required>
-            <button type="submit">Pagar</button>
-        </form>
-        <p id="mensaje"></p>
-    </div>
+   <!-- Formulario de Pago (oculto por defecto) -->
+<div id="formulario-pago" style="display: none;">
+    <h2>Finalizar Pago</h2>
+    <form id="formPago">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Nombre" required>
+
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" placeholder="DNI" required>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" placeholder="Correo Electrónico" required>
+
+        <label for="tarjeta">Tarjeta de Crédito:</label>
+        <input type="text" id="tarjeta" placeholder="Número de Tarjeta" required>
+
+        <button type="submit">Pagar</button>
+    </form>
+    <p id="mensaje"></p>
+</div>
+
 
     <footer>
         <p>Hecho por Víctor Lucenila y Pablo Tena</p>

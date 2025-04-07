@@ -2,7 +2,6 @@ let carrito = [];
 let total = 0;
 
 window.onload = function() {
-    // Inicializa el carrito al cargar la página
     actualizarCarrito();
 };
 
@@ -12,36 +11,33 @@ function agregarAlCarrito(nombre, precio) {
     actualizarCarrito();
 }
 
+function eliminarDelCarrito(index) {
+    total -= carrito[index].precio;
+    carrito.splice(index, 1);
+    actualizarCarrito();
+}
+
 function actualizarCarrito() {
     const lista = document.getElementById("lista-carrito");
-    lista.innerHTML = ""; // Limpia la lista actual
-
+    lista.innerHTML = "";
     carrito.forEach((item, index) => {
         let li = document.createElement("li");
         li.textContent = `${item.nombre} - ${item.precio}€`;
         
-        // Botón para eliminar el producto del carrito
-        let btnEliminar = document.createElement("button");
-        btnEliminar.textContent = "Eliminar";
-        btnEliminar.className = "eliminar-btn"; // Clase para estilo
-        btnEliminar.onclick = function() {
+        // Botón de eliminar con estilo específico
+        let botonEliminar = document.createElement("button");
+        botonEliminar.textContent = "Eliminar";
+        botonEliminar.className = "eliminar";
+        botonEliminar.onclick = function() {
             eliminarDelCarrito(index);
         };
-
-        li.appendChild(btnEliminar); // Añade el botón al elemento de la lista
-        lista.appendChild(li); // Añade el elemento de la lista al carrito
+        
+        li.appendChild(botonEliminar);
+        lista.appendChild(li);
     });
-
     document.getElementById("total").textContent = total;
 }
 
-function eliminarDelCarrito(index) {
-    total -= carrito[index].precio; // Resta el precio del producto
-    carrito.splice(index, 1); // Elimina el producto del carrito
-    actualizarCarrito(); // Actualiza la lista del carrito
-}
-
-// Mostrar formulario al hacer clic en "Finalizar Compra"
 function mostrarFormulario() {
     if (carrito.length === 0) {
         alert("Tu carrito está vacío. Agrega productos antes de pagar.");
@@ -50,7 +46,6 @@ function mostrarFormulario() {
     }
 }
 
-// Manejo del formulario de pago
 document.getElementById("formPago").addEventListener("submit", function (e) {
     e.preventDefault();
     
@@ -64,7 +59,7 @@ document.getElementById("formPago").addEventListener("submit", function (e) {
         carrito = [];
         total = 0;
         actualizarCarrito();
-        document.getElementById("formulario-pago").style.display = "none"; // Oculta el formulario
+        document.getElementById("formulario-pago").style.display = "none"; // Ocultar el formulario después de la compra
     } else {
         alert("Por favor, completa todos los campos.");
     }
