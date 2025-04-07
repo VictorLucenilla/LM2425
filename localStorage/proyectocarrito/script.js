@@ -5,11 +5,12 @@ function agregarAlCarrito(nombre, precio) {
     carrito.push({ nombre, precio });
     total += precio;
     actualizarCarrito();
+    
 }
 document.getElementById("vaciar-carrito").addEventListener("click", function() {
     if (carrito.length === 0) {
         alert("El carrito ya está vacío.");
-        return;
+        actualizaseCarrito();
     }
 
     carrito = [];

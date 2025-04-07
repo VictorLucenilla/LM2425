@@ -1,25 +1,23 @@
-/* Estilos generales */
 body {
     font-family: 'Times New Roman', Times, serif;
-    background-color: #1e3500; /* Fondo negro */
+    background-color: #1e3500; 
     color: white;
     text-align: center;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100vh;    
 }
 
 h1 {
-    background-color: #1e3500; /* Dorado */
+    background-color: #1e3500; 
     padding: 20px;
-    color: #D4AF37; /* Texto blanco */
+    color: #D4AF37; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     margin: 0;
 }
 
-/* Contenedor de productos */
 .contenedor {
     display: flex;
     justify-content: center;
@@ -27,32 +25,35 @@ h1 {
     margin: 20px;
 }
 
-/* Tarjetas de productos */
-/* Tarjetas de productos */
 .producto {
-    background-color: #ffffff; /* Fondo blanco */
+    background-color: #ffffff; 
     border-radius: 10px;
     padding: 20px;
     margin: 10px;
     width: 220px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    color: #000000; /* Texto negro */
-    text-align: left; /* Alinear texto a la izquierda */
-    transition: box-shadow 0.3s ease; /* Suavizar la transición del sombreado */
+    color: #000000; 
+    text-align: center;
+    transition: box-shadow 0.1s ease;
 }
 
 .producto:hover {
-    box-shadow: 0px 0px 20px 5px rgba(212, 175, 55, 0.7); /* Sombreado dorado */
+    box-shadow: 0px 0px 20px 15px rgba(212, 175, 55, 0.7);
 }
 
 .producto img {
-    width: 100%; /* Ajustar imagen al 100% del ancho */
-    height: auto; /* Mantener la relación de aspecto */
-    border-radius: 5px; /* Bordes redondeados para la imagen */
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.producto img:hover {
+    transform: scale(1.1);
 }
 
 .producto h3 {
-    margin: 10px 0 5px; /* Espaciado adecuado */
+    margin: 10px 0 5px;
 }
 
 .producto p {
@@ -60,7 +61,7 @@ h1 {
 }
 
 .producto button {
-    background-color: #D4AF37; /* Dorado */
+    background-color: #D4AF37; 
     color: white;
     border: none;
     padding: 10px 15px;
@@ -71,18 +72,17 @@ h1 {
 }
 
 .producto button:hover {
-    background-color: #B8860B; /* Dorado oscuro */
+    background-color: #B8860B; 
 }
 
-/* Carrito de compras */
 .carrito {
-    background-color: #ffffff; /* Fondo blanco */
+    background-color: #ffffff; 
     border-radius: 10px;
     padding: 20px;
     margin: 20px auto;
     width: 300px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    color: #000000; /* Texto negro */
+    color: #000000; 
 }
 
 .carrito h2 {
@@ -99,7 +99,7 @@ h1 {
 }
 
 .carrito button {
-    background-color: #D4AF37; /* Dorado */
+    background-color: #D4AF37; 
     color: white;
     border: none;
     padding: 10px 20px;
@@ -110,19 +110,18 @@ h1 {
 }
 
 .carrito button:hover {
-    background-color: #B8860B; /* Dorado oscuro */
+    background-color: #B8860B; 
 }
 
-/* Formulario de pago */
 #formulario-pago {
-    background-color: #ffffff; /* Fondo blanco */
+    background-color: #ffffff; 
     border-radius: 10px;
     padding: 50px;
     margin: 20px auto;
     width: 300px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     display: none;
-    color: #000000; /* Texto negro */
+    color: #000000; 
 }
 
 #formulario-pago h2 {
@@ -134,16 +133,15 @@ h1 {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
-    border: 1px solid #D4AF37; /* Dorado */
+    border: 1px solid #D4AF37; 
 }
 
 #mensaje {
     margin-top: 10px;
 }
 
-/* Botón de eliminar */
 button.eliminar {
-    background-color: red; /* Rojo */
+    background-color: red; 
     color: white;
     border: none;
     padding: 5px 10px;
@@ -153,7 +151,16 @@ button.eliminar {
 }
 
 button.eliminar:hover {
-    background-color: darkred; /* Rojo oscuro */
+    background-color: darkred; 
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+#mensaje-agregado {
+    animation: fadeOut 2s ease forwards;
 }
 
 footer {

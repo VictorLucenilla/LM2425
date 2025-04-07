@@ -29,7 +29,7 @@
         <div class="producto" data-nombre="Bicicleta Estática" data-precio="200">
             <img src="bici.jpg" alt="Bicicleta Estática">
             <h3>Bicicleta Estática</h3>
-            <p> 200€</p>
+            <p>200€</p>
             <button onclick="agregarAlCarrito('Bicicleta Estática', 200)">Añadir</button>
         </div>
 
@@ -43,7 +43,7 @@
         <div class="producto" data-nombre="Juego de Discos" data-precio="60">
             <img src="JUEGODEDISCOS.jpg" alt="Juego de Discos">
             <h3>Juego de Discos</h3>
-            <p> 60€</p>
+            <p>60€</p>
             <button onclick="agregarAlCarrito('Juego de Discos', 60)">Añadir</button>
         </div>
 
@@ -62,10 +62,9 @@
         <p><strong>Total: €<span id="total">0</span></strong></p>
         <button onclick="mostrarFormulario()">Finalizar Compra</button>
         <button id="vaciar-carrito">Vaciar Carrito</button>
-
     </div>
 
-    <!-- Formulario de Pago (oculto por defecto) -->
+    <!-- Formulario de Pago -->
     <div id="formulario-pago" style="display: none;">
         <h2>Finalizar Pago</h2>
         <form id="formPago">
@@ -76,6 +75,11 @@
             <button type="submit">Pagar</button>
         </form>
         <p id="mensaje"></p>
+    </div>
+
+    <!-- Mensaje de Producto Añadido -->
+    <div id="mensaje-agregado" style="display: none; position: fixed; top: 20px; right: 20px; background-color: green; color: white; padding: 10px; border-radius: 5px;">
+        Producto añadido al carrito!
     </div>
 
     <footer>
