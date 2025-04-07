@@ -1,7 +1,7 @@
 /* Estilos generales */
 body {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #000000; /* Fondo negro */
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #1e3500; /* Fondo negro */
     color: white;
     text-align: center;
     margin: 0;
@@ -12,9 +12,9 @@ body {
 }
 
 h1 {
-    background-color: #D4AF37; /* Dorado */
+    background-color: #1e3500; /* Dorado */
     padding: 20px;
-    color: white; /* Texto blanco */
+    color: #D4AF37; /* Texto blanco */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     margin: 0;
 }
@@ -159,5 +159,8 @@ button.eliminar:hover {
 footer {
     text-align: center;
     margin-top: 20px;
-color:#B8860B
+    color:#B8860B;
+    font-size: large;
+    font-weight: 900;
+    font-family: 'Courier New', Courier, monospace;   
 }

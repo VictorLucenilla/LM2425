@@ -15,42 +15,42 @@
         <div class="producto" data-nombre="Pesas" data-precio="50">
             <img src="pesas.jpg" alt="Pesas">
             <h3>Pesas de 10kg</h3>
-            <p>Precio: 50€</p>
+            <p>50€</p>
             <button onclick="agregarAlCarrito('Pesas', 50)">Añadir</button>
         </div>
 
         <div class="producto" data-nombre="Cinta de Correr" data-precio="300">
             <img src="cintadecorrer.jpg" alt="Cinta de Correr">
             <h3>Cinta de Correr</h3>
-            <p>Precio: 300€</p>
+            <p>300€</p>
             <button onclick="agregarAlCarrito('Cinta de Correr', 300)">Añadir</button>
         </div>
 
         <div class="producto" data-nombre="Bicicleta Estática" data-precio="200">
             <img src="bici.jpg" alt="Bicicleta Estática">
             <h3>Bicicleta Estática</h3>
-            <p>Precio: 200€</p>
+            <p> 200€</p>
             <button onclick="agregarAlCarrito('Bicicleta Estática', 200)">Añadir</button>
         </div>
 
         <div class="producto" data-nombre="Banco de Pesas" data-precio="80">
             <img src="banco.jpg" alt="Banco de Pesas">
             <h3>Banco de Pesas</h3>
-            <p>Precio: 80€</p>
+            <p>80€</p>
             <button onclick="agregarAlCarrito('Banco de Pesas', 80)">Añadir</button>
         </div>
 
         <div class="producto" data-nombre="Juego de Discos" data-precio="60">
             <img src="JUEGODEDISCOS.jpg" alt="Juego de Discos">
             <h3>Juego de Discos</h3>
-            <p>Precio: 60€</p>
+            <p> 60€</p>
             <button onclick="agregarAlCarrito('Juego de Discos', 60)">Añadir</button>
         </div>
 
         <div class="producto" data-nombre="Cuerda para Saltar" data-precio="20">
             <img src="COMBA.jpg" alt="Cuerda para Saltar">
             <h3>Cuerda para Saltar</h3>
-            <p>Precio: 20€</p>
+            <p>20€</p>
             <button onclick="agregarAlCarrito('Cuerda para Saltar', 20)">Añadir</button>
         </div>
     </div>
@@ -61,6 +61,8 @@
         <ul id="lista-carrito"></ul>
         <p><strong>Total: €<span id="total">0</span></strong></p>
         <button onclick="mostrarFormulario()">Finalizar Compra</button>
+        <button id="vaciar-carrito">Vaciar Carrito</button>
+
     </div>
 
     <!-- Formulario de Pago (oculto por defecto) -->
