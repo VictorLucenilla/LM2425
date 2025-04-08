@@ -1,6 +1,7 @@
 body {
     font-family: 'Times New Roman', Times, serif;
-    background-color: #1e3500; 
+    background-size: cover; 
+    background-image: url('fondo.jpg');
     color: white;
     text-align: center;
     margin: 0;
@@ -8,12 +9,13 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;    
+    background-color: #1E1E1E; /* Fondo oscuro para resaltar el azul */
 }
 
 h1 {
-    background-color: #1e3500; 
+    background-color: transparent; 
     padding: 20px;
-    color: #D4AF37; 
+    color: #ffffff; /* Azul PS */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     margin: 0;
 }
@@ -26,19 +28,19 @@ h1 {
 }
 
 .producto {
-    background-color: #ffffff; 
+    background-color: transparent; 
     border-radius: 10px;
     padding: 20px;
     margin: 10px;
     width: 220px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    color: #000000; 
+    color: #ffffff; 
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .producto:hover {
-    box-shadow: 0px 0px 20px 15px rgba(212, 175, 55, 0.7);
+    box-shadow: 0px 0px 20px 15px rgba(0, 0, 0, 0.7);
     transform: translateY(-5px) scale(1.05);
 }
 
@@ -62,8 +64,8 @@ h1 {
 }
 
 .producto button {
-    background-color: #D4AF37; 
-    color: white;
+    background-color: #ffffff; /* Azul PS */
+    color: rgb(13, 116, 212);
     border: none;
     padding: 10px 15px;
     cursor: pointer;
@@ -73,7 +75,7 @@ h1 {
 }
 
 .producto button:hover {
-    background-color: #B8860B; 
+    background-color: #80c2f1; /* Azul más oscuro */
     transform: scale(1.1);
 }
 
@@ -82,13 +84,13 @@ h1 {
 }
 
 .carrito {
-    background-color: #ffffff; 
+    background-color: transparent; 
     border-radius: 10px;
     padding: 20px;
     margin: 20px auto;
     width: 300px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    color: #000000; 
+    box-shadow: 0px 4px 8px rgb(245, 244, 244);
+    color: #ffffff; 
 }
 
 .carrito h2 {
@@ -105,8 +107,8 @@ h1 {
 }
 
 .carrito button {
-    background-color: #D4AF37; 
-    color: white;
+    background-color: #ffffff; /* Azul más oscuro */
+    color: rgb(13, 116, 212);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
@@ -116,11 +118,29 @@ h1 {
 }
 
 .carrito button:hover {
-    background-color: #B8860B; 
     transform: scale(1.1);
 }
 
 .carrito button:active {
+    transform: scale(0.95);
+}
+
+/* Estilos para el botón de eliminar */
+.eliminar {
+    background-color: red; /* Color de fondo rojo */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.eliminar:hover {
+    background-color: darkred; /* Color más oscuro al pasar el mouse */
+    transform: scale(1.1);
+}
+
+.eliminar:active {
     transform: scale(0.95);
 }
 
@@ -131,7 +151,7 @@ h1 {
     margin: 20px auto;
     width: 300px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    display: none;
+    display: block;
     color: #000000; 
 }
 
@@ -144,36 +164,20 @@ h1 {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
-    border: 1px solid #D4AF37; 
+    border: 1px solid #0072C6; /* Azul PS */
 }
 
 #mensaje {
     margin-top: 10px;
 }
 
-button.eliminar {
-    background-color: red; 
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-left: 10px;
-}
-
-button.eliminar:hover {
-    background-color: darkred; 
-}
-
-button.eliminar:active {
-    transform: scale(0.95);
-}
-
 footer {
     text-align: center;
     margin-top: 20px;
-    color: #B8860B;
+    color: #ffffff;
     font-size: large;
     font-weight: 900;
     font-family: 'Courier New', Courier, monospace;   
+    text-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    
 }
