@@ -107,14 +107,12 @@ h1 {
 }
 
 .carrito button {
-    background-color: #ffffff; /* Azul más oscuro */
     color: rgb(13, 116, 212);
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     margin-left: 10px;
     border-radius: 5px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .carrito button:hover {
@@ -127,7 +125,7 @@ h1 {
 
 /* Estilos para el botón de eliminar */
 .eliminar {
-    background-color: red; /* Color de fondo rojo */
+    background-color: rgba(255, 0, 0, 0.815); /* Color de fondo rojo */
     color: white;
     border: none;
     padding: 5px 10px;
@@ -138,6 +136,7 @@ h1 {
 .eliminar:hover {
     background-color: darkred; /* Color más oscuro al pasar el mouse */
     transform: scale(1.1);
+
 }
 
 .eliminar:active {
