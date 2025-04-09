@@ -39,10 +39,13 @@ document.getElementById("vaciar-carrito").addEventListener("click", function() {
     }
 });
 
-function eliminarDelCarrito(index) {
-    total -= carrito[index].precio;
-    carrito.splice(index, 1);
-    actualizarCarrito();
+function eliminarDelCarrito(nombre, precio) {
+    let index = carrito.findIndex(item => item.nombre === nombre && item.precio === precio);
+    if (index !== -1) {
+        total -= carrito[index].precio;
+        carrito.splice(index, 1);
+        actualizarCarrito();
+    }
 }
 
 function actualizarCarrito() {
@@ -69,10 +72,8 @@ function actualizarCarrito() {
         botonEliminar.textContent = "Eliminar";
         botonEliminar.className = "eliminar";
         botonEliminar.onclick = function() {
-            // Eliminar todos los productos de esa cantidad
-            for (let i = 0; i < cantidad; i++) {
-                eliminarDelCarrito(carrito.indexOf({ nombre, precio }));
-            }
+            // Eliminar solo una unidad de cada producto
+            eliminarDelCarrito(nombre, precio);
         };
         
         li.appendChild(botonEliminar);
@@ -90,47 +91,10 @@ function mostrarFormulario() {
     }
 }
 
-document.getElementById("formPago").addEventListener("submit", function (e) {
-    e.preventDefault();
-    
-    let nombre = document.getElementById("nombre").value;
-    let dni = document.getElementById("dni").value;
-    let email = document.getElementById("email").value;
-    let tarjeta = document.getElementById("tarjeta").value;
-
-    if (nombre && dni && email && tarjeta) {
-        document.getElementById("mensaje").textContent = "¡Compra realizada con éxito! Gracias por tu compra.";
-        carrito = [];
-        total = 0;
-        actualizarCarrito();
-        document.getElementById("formulario-pago").style.display = "none"; // Ocultar el formulario después de la compra
-    } else {
-        alert("Por favor, completa todos los campos.");
-    }
-});
-
 function mostrarMensajeAgregado() {
     let mensaje = document.getElementById("mensaje-agregado");
     mensaje.style.display = "block";
     setTimeout(() => {
         mensaje.style.display = "none";
     }, 2000);
-}
-
-function detectarTarjeta() {
-    let tarjetaInput = document.getElementById("tarjeta");
-    let tipoTarjeta = document.getElementById("tipo-tarjeta");
-    let tarjeta = tarjetaInput.value;
-
-    // Expresiones regulares para detectar tipos de tarjetas
-    let visa = /^4[0-9]{12}(?:[0-9]{3})?$/;
-    let mastercard = /^5[1-5][0-9]{14}$/;
-  
-    if (visa.test(tarjeta)) {
-        tipoTarjeta.textContent = "Tipo de tarjeta: Visa";
-    } else if (mastercard.test(tarjeta)) {
-        tipoTarjeta.textContent = "Tipo de tarjeta: MasterCard";
-    } else {
-        tipoTarjeta.textContent = "";
-    }
 }
