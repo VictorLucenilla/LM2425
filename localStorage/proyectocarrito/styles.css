@@ -12,6 +12,12 @@ body {
     background-color: #1E1E1E; /* Fondo oscuro para resaltar el azul */
 }
 
+.logo{
+    width: 200px; /* Ajusta el tamaño según sea necesario */
+    height: auto; /* Mantener la proporción */
+
+}
+
 h1 {
     background-color: transparent; 
     padding: 20px;
