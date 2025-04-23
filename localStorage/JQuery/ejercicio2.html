@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 2</title>
+   
+</head>
+<body>
+    <h1 id="miEncabezado">Este es un encabezado</h1>
+    <p class="pares">Este es el primer párrafo.</p>
+    <p class="pares">Este es el segundo párrafo.</p>
+    <p>Este es el tercer párrafo.</p>
+    <button onclick="toggleVisibility('hide')">Ocultar</button>
+    <button onclick="toggleVisibility('show')">Aparecer</button>
+</body>
+<script>
+    function toggleVisibility(action) {
+        let header = document.getElementById('miEncabezado');
+        let paragraphs = document.querySelectorAll('.pares');
+        if (action === 'hide') {
+            header.style.display = 'none';
+            paragraphs.forEach(p => p.style.display = 'none');
+        } else {
+            header.style.display = 'block';
+            paragraphs.forEach(p => p.style.display = 'block');
+        }
+    }
+</script>
+</html>

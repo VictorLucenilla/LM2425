@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 4</title>
+</head>
+<body>
+    <h1 id="miEncabezado">Este es un encabezado</h1>
+    <p class="pares">Este es el primer párrafo.</p>
+    <p class="pares">Este es el segundo párrafo.</p>
+    <button onclick="changeStyles('increase')">Más grande</button>
+    <button onclick="changeStyles('decrease')">Menos grande</button>
+</body>
+<script>
+    function changeStyles(action) {
+        let header = document.getElementById('miEncabezado');
+        let paragraphs = document.querySelectorAll('.pares');
+        if (action === 'increase') {
+            header.style.fontSize = '2em';
+            header.style.color = 'blue';
+            paragraphs.forEach(p => {
+                p.style.fontSize = '2em';
+                p.style.color = 'green';
+            });
+        } else {
+            header.style.fontSize = '1em';
+            header.style.color = 'black';
+            paragraphs.forEach(p => {
+                p.style.fontSize = '1em';
+                p.style.color = 'black';
+            });
+        }
+    }
+</script>
+</html>
