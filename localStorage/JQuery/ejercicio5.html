@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 5</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <div id="contenido">
+        <h1>Este es un encabezado</h1>
+        <p>Este es un párrafo visible.</p>
+    </div>
+    <button id="ocultar">Ocultar</button>
+    <button id="mostrar">Mostrar</button>
+</body>
+<script>
+    $(document).ready(function() {
+        $('#ocultar').click(function() {
+            $('#contenido').fadeOut();
+        });
+        $('#mostrar').click(function() {
+            $('#contenido').fadeIn();
+        });
+    });
+</script>
+</html>
