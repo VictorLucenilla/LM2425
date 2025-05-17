@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Información de Sevici</title>
+    <link rel="stylesheet" href="sevici.css">
+    <!-- Enlazar código por aquí -->
+</head>
+<body>
+    <div class="container">
+        <h1>Información de Sevici</h1>
+        <div class="buttons">
+            <button id="numStations">Calcular número de estaciones disponibles</button>
+            <button id="totalBikes">Mostrar total de bicicletas</button>
+            <button id="totalFree">Mostrar total de sitios libres</button>
+        </div>
+        <div id="result"></div>
+    </div>
+    <!-- Código de jQuery debajo-->
+    <script>
+        import React, { useState, useEffect } from 'react';
+import './sevici.css'; // Asegúrate de que este archivo esté en la misma carpeta
+
+export default function App() {
+    const [stations, setStations] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        async function fetchStations() {
+            try {
+                const response = await fetch('http://api.citybik.es/sevici.json');
+                const data = await response.json();
+                setStations(data);
+            } catch (error) {
+                console.error('Error fetching station data:', error);
+            } finally {
+                setLoading(false);
+            }
+        }
+        fetchStations();
+    }, []);
+
+    const totalBikes = stations.reduce((sum, station) => sum + station.bikes, 0);
+    const totalFree = stations.reduce((sum, station) => sum + station.free, 0);
+    const totalStations = stations.length;
+
+    return (
+        <div className="container">
+            <h1>Información de Sevici</h1>
+            <div className="buttons">
+                <button onClick={() => alert(`Total de estaciones: ${totalStations}`)}>Calcular número de estaciones disponibles</button>
+                <button onClick={() => alert(`Total de bicicletas disponibles: ${totalBikes}`)}>Mostrar total de bicicletas</button>
+                <button onClick={() => alert(`Total de sitios libres: ${totalFree}`)}>Mostrar total de sitios libres</button>
+            </div>
+            {loading ? <p>Cargando...</p> : null}
+        </div>
+    );
+}
+
+    </script>
+</body>
+</html>
