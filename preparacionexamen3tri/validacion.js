@@ -1,20 +1,20 @@
 // Validación del formulario de registro para Conexión+
 
 document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('registro-form');
-    const username = document.getElementById('username');
-    const email = document.getElementById('email');
-    const password = document.getElementById('password');
-    const confirmPassword = document.getElementById('confirm-password');
-    const errorMessage = document.getElementById('error-message');
-    const successMessage = document.getElementById('success-message');
+    let form = document.getElementById('registro-form');
+    let username = document.getElementById('username');
+    let email = document.getElementById('email');
+    let password = document.getElementById('password');
+    let confirmPassword = document.getElementById('confirm-password');
+    let errorMessage = document.getElementById('error-message');
+    let successMessage = document.getElementById('success-message');
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        const usernameValue = username.value.trim();
-        const emailValue = email.value.trim();
-        const passwordValue = password.value.trim();
-        const confirmPasswordValue = confirmPassword.value.trim();
+        let usernameValue = username.value.trim();
+        let emailValue = email.value.trim();
+        let passwordValue = password.value.trim();
+        let confirmPasswordValue = confirmPassword.value.trim();
 
         // Limpiar mensajes previos
         errorMessage.textContent = '';
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para validar formato de correo electrónico
     function validateEmail(email) {
-        const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        let regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
         return regex.test(email);
     }
 });
