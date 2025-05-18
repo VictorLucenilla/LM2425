@@ -22,8 +22,6 @@ export default function App() {
 
     let totalBikes = stations.reduce((sum, station) => sum + station.bikes, 0);
     let totalFree = stations.reduce((sum, station) => sum + station.free, 0);
-    let totalStations = stations.length;
-
     return (
         <div className="container">
             <h1>Información de Sevici</h1>

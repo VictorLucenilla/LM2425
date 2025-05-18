@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafío Matemático Contrarreloj</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilos adicionales si son necesarios */
+        body {
+            font-family: 'Inter', sans-serif; /* Fuente agradable */
+        }
+        /* Asegurar que el input de número no muestre spinners (opcional) */
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield; /* Para Firefox */}
+        /* Barra de progreso simple */
+        #timerBarContainer {
+            height: 10px;
+            background-color: #e5e7eb; /* gris claro */
+            border-radius: 5px;
+            overflow: hidden; /* Para que la barra interna no se salga */
+            margin-top: 1rem;
+        }
+        #timerBar {
+            height: 100%;
+            width: 100%; /* Empieza llena */
+            background-color: #34d399; /* verde */
+            transition: width 0.1s linear; /* Transición suave */
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <div class="bg-white p-8 rounded-lg shadow-lg text-center max-w-md w-full">
+        <h1 class="text-2xl font-bold mb-4 text-gray-800">Desafío Matemático</h1>
+
+        <div class="flex justify-between mb-6 text-lg">
+            <p>Puntuación: <span id="currentScore" class="font-semibold text-blue-600">0</span></p>
+            <p>Máxima: <span id="highScore" class="font-semibold text-green-600">0</span></p>
+        </div>
+
+        <div id="gameArea" class="hidden">
+            <div id="problem" class="text-3xl font-mono mb-4 p-4 bg-gray-200 rounded">
+                1 + 1 = ?
+            </div>
+
+            <input type="number" id="answerInput" class="w-full p-3 border border-gray-300 rounded text-center text-xl mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Tu respuesta">
+
+            <div id="timerBarContainer">
+                <div id="timerBar"></div>
+            </div>
+
+             <p id="feedback" class="mt-4 h-6 text-lg font-medium">&nbsp;</p> </div>
+
+        <button id="startButton" class="mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded transition duration-150 ease-in-out">
+            Iniciar Juego
+        </button>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="rellena.js"></script>
+</body>
+</html>
