@@ -1,0 +1,75 @@
+html{
+    box-sizing: border-box;
+}
+body{
+    margin: 0; /* No habrá separación de los elementos (superior, inferior o lateral)*/
+}
+p::first-letter{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #4c3803;
+}
+article, aside, footer, header{
+    padding: 1rem;
+}
+header{
+    background-color: #b28306;
+    color: #4c3803;
+    text-align: center;
+    border-radius: 20px;
+}
+aside{
+    background-color: #b28306;
+    border-radius: 20px;
+}
+nav{
+    display: flex;
+    background-color: #b28306;
+    border-radius: 20px;
+}
+nav a{
+    /* Estilo de los enlaces dentro de la barra de navegación */
+    flex: auto;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4c3803;
+    color:#b28306;
+    padding: 5px 0;
+    margin: 0 5px;
+    border-radius: 20px;
+}
+nav a:hover{
+    color: white;
+    border: 1px solid white;
+    text-decoration: none;
+}
+a{
+    color: gray;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Para dispositivos con pantalla Grande */
+@media screen and (min-width: 480px){
+    body{
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        box-sizing: border-box;
+        max-width: 75rem;
+    }
+    main{
+        display: flex;
+        flex-wrap: nowrap;
+        border-bottom: 0.5rem solid black;
+    }
+    nav, header{
+        order: -1; /* Order para que el nav y el header suban arriba */
+    }
+    article{
+        flex: 75%;
+    }
+    aside{
+        flex: 25%;
+    }
+}
